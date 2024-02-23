@@ -49,7 +49,7 @@ $ gcloud secrets add-iam-policy-binding runner-secret \
 
 ```sh
 $ gcloud compute instance-templates create gh-runner-template \
-    --image-family=ubuntu-1804-lts \
+    --image-family=ubuntu-2204-lts \
     --image-project=ubuntu-os-cloud \
     --boot-disk-type=pd-ssd \
     --boot-disk-size=10GB \
