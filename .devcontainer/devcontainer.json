@@ -9,7 +9,8 @@
     "ghcr.io/devcontainers-contrib/features/pipx-package:1": {
       "package": "python-dotenv[cli]"
     },
-    "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
+    "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
+    "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {}
   },
   "postCreateCommand": ["scripts/install-dev-tools.sh"],
   "customizations": {
