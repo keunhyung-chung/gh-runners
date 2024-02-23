@@ -1,0 +1,67 @@
+// cSpell:enableCompoundWords
+// cSpell:ignore esbenp
+{
+  "autoDocstring.docstringFormat": "google-notypes",
+
+  "cSpell.enableFiletypes": [
+    "github-actions-workflow",
+    "ignore",
+    "makefile",
+    "shellscript",
+    "toml"
+  ],
+  "cSpell.ignorePaths": [],
+
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [88],
+  "editor.stickyScroll.enabled": true,
+
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+
+  "git.autofetch": true,
+  "git.branchProtection": ["main"],
+  "git.mergeEditor": true,
+  "git.postCommitCommand": "sync",
+
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+
+  "notebook.gotoSymbols.showAllSymbols": true,
+
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.testing.pytestArgs": ["--cov-report", "xml"],
+  "python.testing.pytestEnabled": true,
+
+  "terminal.integrated.stickyScroll.enabled": true,
+
+  "workbench.tree.enableStickyScroll": true,
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "files.trimTrailingWhitespace": false
+  }
+}
