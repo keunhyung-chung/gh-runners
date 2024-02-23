@@ -6,6 +6,9 @@
       "username": "vscode"
     },
     "ghcr.io/devcontainers-contrib/features/direnv:1": {},
+    "ghcr.io/devcontainers-contrib/features/pipx-package:1": {
+      "package": "python-dotenv[cli]"
+    },
     "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
   },
   "postCreateCommand": ["scripts/install-dev-tools.sh"],
