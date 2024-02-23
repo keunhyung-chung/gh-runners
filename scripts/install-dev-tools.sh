@@ -5,4 +5,5 @@
 echo 'eval "$(direnv hook zsh)"' >>"$HOME/.zshrc"
 direnv allow .
 
-dotenv run gcloud config set project "$PROJECT_ID"
+gcloud auth login "$(dotenv get GOOGLE_CLOUD_ACCOUNT)"
+gcloud config set project "$(dotenv get PROJECT_ID)"
