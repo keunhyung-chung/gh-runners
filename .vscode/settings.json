@@ -46,6 +46,7 @@
 
   "terminal.integrated.stickyScroll.enabled": true,
 
+  "workbench.iconTheme": "vscode-icons",
   "workbench.tree.enableStickyScroll": true,
 
   "[python]": {
