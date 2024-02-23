@@ -1,6 +1,10 @@
 {
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true,
+      "username": "vscode"
+    },
     "ghcr.io/devcontainers-contrib/features/direnv:1": {},
     "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
   },
