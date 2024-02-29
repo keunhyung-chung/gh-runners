@@ -11,7 +11,7 @@
       "package": "python-dotenv[cli]"
     },
     "ghcr.io/dhoeric/features/google-cloud-cli:1": {
-      "installGkeGcloudAuthPlugin": true
+      "INSTALL_GKEGCLOUDAUTH_PLUGIN": true
     },
     "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {},
     "ghcr.io/rio/features/kustomize:1": {}
