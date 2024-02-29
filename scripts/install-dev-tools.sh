@@ -7,3 +7,4 @@ direnv allow .
 
 gcloud auth login "$(dotenv get GOOGLE_CLOUD_ACCOUNT)"
 gcloud config set project "$(dotenv get PROJECT_ID)"
+gcloud config set compute/zone "$(dotenv get COMPUTE_ZONE)"
