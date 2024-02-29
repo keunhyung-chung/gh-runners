@@ -5,12 +5,16 @@
       "configureZshAsDefaultShell": true,
       "username": "vscode"
     },
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
     "ghcr.io/devcontainers-contrib/features/direnv:1": {},
     "ghcr.io/devcontainers-contrib/features/pipx-package:1": {
       "package": "python-dotenv[cli]"
     },
-    "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
-    "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {}
+    "ghcr.io/dhoeric/features/google-cloud-cli:1": {
+      "installGkeGcloudAuthPlugin": true
+    },
+    "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {},
+    "ghcr.io/rio/features/kustomize:1": {}
   },
   "postCreateCommand": ["scripts/install-dev-tools.sh"],
   "customizations": {
