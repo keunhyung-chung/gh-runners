@@ -37,6 +37,7 @@ gcloud builds submit --tag gcr.io/${PROJECT_ID}/runner:latest .
 ```sh
 $ gcloud beta container clusters create ${CLUSTER_NAME} \
     --release-channel regular \
+    --subnetwork=${SUBNETWORK} \
     --workload-pool=${PROJECT_ID}.svc.id.goog
 $ gcloud container clusters get-credentials ${CLUSTER_NAME}
 ```
@@ -63,10 +64,10 @@ $ kubectl create serviceaccount gke-runner-sa
 $ gcloud iam service-accounts add-iam-policy-binding \
     --role roles/iam.workloadIdentityUser \
     --member "serviceAccount:${PROJECT_ID}.svc.id.goog[default/gke-runner-sa]" \
-    runner-sa@${PROJECT_ID}.iam.gserviceaccount.com
+    ${SA_EMAIL}
 $ kubectl annotate serviceaccount \
     gke-runner-sa \
-    iam.gke.io/gcp-service-account=runner-sa@${PROJECT_ID}.iam.gserviceaccount.com
+    iam.gke.io/gcp-service-account=${SA_EMAIL}
 ```
 
 - Step 7: Store the Github Token in a secret and set the image for the deployment.
