@@ -9,12 +9,12 @@ This example showcases how to deploy GitHub Actions Self Hosted Runners on GKE w
 - Step 1: Set the required environment variables.
 
 ```sh
-$ export PROJECT_ID=foo
-$ export CLUSTER_NAME=runner-cluster
-$ export GITHUB_TOKEN=foo
-$ export REPO_OWNER=foo
-$ export REPO_NAME=foo
-$ export REPO_URL=foo
+export PROJECT_ID=foo
+export CLUSTER_NAME=runner-cluster
+export GITHUB_TOKEN=foo
+export REPO_OWNER=foo
+export REPO_NAME=foo
+export REPO_URL=foo
 ```
 
 - Step 2: Enable the required GCP APIs.
@@ -29,7 +29,7 @@ $ gcloud services enable container.googleapis.com \
 - Step 3: Build the Docker image for the Self Hosted Runner using CloudBuild.
 
 ```sh
-$ gcloud builds submit --tag gcr.io/${PROJECT_ID}/runner:latest .
+gcloud builds submit --tag gcr.io/${PROJECT_ID}/runner:latest .
 ```
 
 - Step 4: Create a GKE Cluster and generate kubeconfig.
@@ -44,8 +44,8 @@ $ gcloud container clusters get-credentials ${CLUSTER_NAME}
 - Step 5: Create the Google Service Account that will used as ADC within the runner pods.
 
 ```sh
-$ gcloud iam service-accounts create runner-sa --display-name "runner-sa"
-$ SA_EMAIL=$(gcloud iam service-accounts list --filter="displayName:runner-sa" --format='value(email)')
+gcloud iam service-accounts create runner-sa --display-name "runner-sa"
+SA_EMAIL=$(gcloud iam service-accounts list --filter="displayName:runner-sa" --format='value(email)')
 ```
 
 Optionally grant the Google Service Account a role.
@@ -72,8 +72,8 @@ $ kubectl annotate serviceaccount \
 - Step 7: Store the Github Token in a secret and set the image for the deployment.
 
 ```sh
-$ kubectl create secret generic runner-k8s-secret --from-literal=GITHUB_TOKEN=$GITHUB_TOKEN
-$ kustomize edit set image gcr.io/PROJECT_ID/runner:latest=gcr.io/$PROJECT_ID/runner:latest
+kubectl create secret generic runner-k8s-secret --from-literal=GITHUB_TOKEN=$GITHUB_TOKEN
+kustomize edit set image gcr.io/PROJECT_ID/runner:latest=gcr.io/$PROJECT_ID/runner:latest
 ```
 
 - Step 8: Create the env file which is used by Kustomize to generate a config map.
@@ -89,5 +89,5 @@ EOF
 - Step 9: Deploy the Self Hosted Runner deployment using Kustomize.
 
 ```sh
-$ kustomize build . | kubectl apply -f -
+kustomize build . | kubectl apply -f -
 ```
