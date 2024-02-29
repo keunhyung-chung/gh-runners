@@ -9,18 +9,18 @@ This example showcases how to deploy GitHub Actions Self Hosted Runners on MIGs 
 - Step 1: Set the required environment variables.
 
 ```sh
-export PROJECT_ID=foo
-export GITHUB_TOKEN=foo
-export REPO_OWNER=foo
-export REPO_NAME=foo
-export REPO_URL=foo
+$ export PROJECT_ID=foo
+$ export GITHUB_TOKEN=foo
+$ export REPO_OWNER=foo
+$ export REPO_NAME=foo
+$ export REPO_URL=foo
 ```
 
 - Step 2: Enable the required GCP APIs.
 
 ```sh
-gcloud config set project $PROJECT_ID
-gcloud services enable compute.googleapis.com secretmanager.googleapis.com
+$ gcloud config set project $PROJECT_ID
+$ gcloud services enable compute.googleapis.com secretmanager.googleapis.com
 ```
 
 - Step 3: Store the runner credentials as a secret.
@@ -49,7 +49,7 @@ $ gcloud secrets add-iam-policy-binding runner-secret \
 
 ```sh
 $ gcloud compute instance-templates create gh-runner-template \
-    --image-family=ubuntu-2204-lts \
+    --image-family=ubuntu-1804-lts \
     --image-project=ubuntu-os-cloud \
     --boot-disk-type=pd-ssd \
     --boot-disk-size=10GB \
